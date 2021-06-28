@@ -21,7 +21,11 @@ function bindApiButtons() {
   });
 
   getSingleElementByClassName('hs_composeMessage').addEventListener('click', function () {
-    hsp.composeMessage(getSingleElementByClassName('hs_composeMessageInput').value);
+    hsp.composeMessage(getSingleElementByClassName('hs_composeMessageInput').value, { scheduleTimestamp: getSingleElementByClassName('hs_sdkInput hs_composeMessageDateInput').value});
+  });
+
+  getSingleElementByClassName('hs_composeMessageV2').addEventListener('click', function () {
+    hsp.composeMessageV2(getSingleElementByClassName('hs_composeMessageInputV2').value, { scheduleTimestamp: getSingleElementByClassName('hs_sdkInput hs_composeMessageDateInputV2').value});
   });
 
   getSingleElementByClassName('hs_saveData').addEventListener('click', function () {
